@@ -1,11 +1,15 @@
 !!!
 %html
   %head
-    %title IReadThat
+    %title iReadThat
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .notice= notice
-    .alert= alert
-    = yield
+    %header
+      .content
+        %h1 iReadThat
+    #content
+      .notice= notice
+      .alert= alert
+      = yield
