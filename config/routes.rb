@@ -7,7 +7,7 @@ IReadThat::Application.routes.draw do
 
   devise_for :users
 
-  get "dashboard/index"
+  get "dashboard/index", as: "dashboard"
 
   root to: 'dashboard#index'
   # The priority is based upon order of creation:
