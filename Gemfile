@@ -12,6 +12,8 @@ gem 'mongoid', '~> 3.1.6'
 gem 'kaminari', '~> 0.15.1'
 
 gem 'devise', '~> 3.2.4'
+gem 'rolify', '~> 3.4.0'
+gem 'authority', '~> 3.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
