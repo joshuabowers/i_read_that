@@ -1,0 +1,5 @@
+= form_tag books_path, method: :get do
+  .inputs
+    = text_field_tag :query, "", required: true, class: 'google-book-search'
+  .actions
+    = submit_tag 'Search'
