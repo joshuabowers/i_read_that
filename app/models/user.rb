@@ -39,4 +39,8 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+  
+  embeds_many :events
+  has_and_belongs_to_many :read_books, class_name: 'Book', inverse_of: :read_by
+  has_and_belongs_to_many :currently_reading, class_name: 'Book', inverse_of: :currently_read_by
 end

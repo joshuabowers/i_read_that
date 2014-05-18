@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @event.type
+%p
+  %b Occurred at:
+  = @event.occurred_at
+%p
+  %b Pages read:
+  = @event.pages_read
+%p
+  %b Rating:
+  = @event.rating
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

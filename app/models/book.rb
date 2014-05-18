@@ -6,6 +6,9 @@ class Book
   field :pages, type: Integer
   field :covers, type: Hash
   
+  has_and_belongs_to_many :read_by, class_name: 'User', inverse_of: :read_books
+  has_and_belongs_to_many :currently_read_by, class_name: 'User', inverse_of: :currently_reading
+  
   def self.google_books_search(query)
     GoogleBooks::API.search(query, api_key: google_books_api_key)
   end
