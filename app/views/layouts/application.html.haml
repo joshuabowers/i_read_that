@@ -9,6 +9,12 @@
     %header
       .content
         %h1 iReadThat
+        %aside.account
+          - if user_signed_in?
+            = link_to 'Sign out', destroy_user_session_path
+          - else
+            = link_to 'Log in', new_user_session_path
+            = link_to 'Sign up', new_user_registration_path
     #content
       .notice= notice
       .alert= alert
