@@ -44,6 +44,8 @@ gem 'neat', '~> 1.5.0'
 
 gem 'pry-rails'
 
+gem 'google_books'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
