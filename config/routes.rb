@@ -1,4 +1,7 @@
 IReadThat::Application.routes.draw do
+  resources :books
+
+
   devise_for :users
 
   get "dashboard/index"
