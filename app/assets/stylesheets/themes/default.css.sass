@@ -4,7 +4,8 @@ $header-background-color-primary: #639664
 $header-background-color-secondary: darken( $header-background-color-primary, 20% )
 $header-background-gradient-primary: linear-gradient( to bottom, $header-background-color-secondary, $header-background-color-primary, $header-background-color-secondary )
 $gallery-background-color-primary: #637C96
-$gallery-background-color-secondary: darken( $gallery-background-color-primary, 35% )
+$gallery-background-color-secondary: darken( $gallery-background-color-primary, 15% )
+$gallery-background-gradient-primary: linear-gradient( to bottom right, $gallery-background-color-primary, $gallery-background-color-secondary )
 $shadow-color: transparentize( #444, 0.5 )
 
 body, html
@@ -29,3 +30,11 @@ body
   
   #content, .content
     +outer-container
+  
+  .gallery
+    +span-columns( 12 )
+    +background( $gallery-background-gradient-primary )
+    border-radius: 0.75em
+    box-shadow: inset 7px 7px 10px darken( $shadow-color, 20% )
+    padding: 1em
+    margin-top: 1em
