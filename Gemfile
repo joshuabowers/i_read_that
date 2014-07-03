@@ -18,7 +18,7 @@ gem 'authority', '~> 3.0.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass', '~> 3.2.19'
+  gem 'sass', '~> 3.3.9'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -40,8 +40,8 @@ gem 'jquery-ui-themes'
 gem 'haml-rails'
 
 gem 'simple_form'
-gem 'bourbon', '~> 3.1.8'
-gem 'neat', '~> 1.5.0'
+gem 'bourbon', '~> 4.0.2'
+gem 'neat', '~> 1.6.0'
 
 gem 'pry-rails'
 

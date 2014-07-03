@@ -1,5 +1,6 @@
 .book
-  .cover= image_tag cover_for( book )
+  .cover{ data: { overlay: current_user.in_library?( book ) ? '-' : '+' } }
+    = image_tag cover_for( book )
   .title= book.title
   .authors= link_to book.authors.to_sentence, books_path(q: book.authors.join(' '))
   - if book.preview_link.present?

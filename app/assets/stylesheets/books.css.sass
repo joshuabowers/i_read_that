@@ -3,9 +3,9 @@
 // You can use Sass here: http://sass-lang.com/
 
 .books
-  display: flex
-  flex-wrap: wrap
-  justify-content: center
+  +display(flex)
+  +flex-wrap(wrap)
+  +justify-content(center)
   
   .book
     padding: 1em
@@ -13,11 +13,14 @@
     border-radius: 0.5em
     transition: all 0.2s ease-in-out
     text-align: center
+    .cover img
+      box-shadow: 0 0 10px $shadow-color
     .title, .authors
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
       a
+        transition: all 0.2s ease-in-out
         text-decoration: none
         color: inherit
     .preview
@@ -27,14 +30,16 @@
     &:hover
       background-color: transparentize( $gallery-background-color-primary, 0.3 )
       width: 200px
-      box-shadow: 3px 3px $shadow-color
+      box-shadow: 3px 3px 10px $shadow-color
       .cover
         position: relative
         display: inline-block
         width: 128px
+        img
+          box-shadow: none
         &:hover:after
           z-index: 100
-          content: '+'
+          content: attr(data-overlay)
           display: block
           position: absolute
           bottom: 0.15em
