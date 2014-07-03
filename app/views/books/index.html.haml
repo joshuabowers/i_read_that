@@ -16,11 +16,12 @@
       %td= book.title
       %td= book.authors
       %td= book.isbn
-      %td= book.pages
+      %td= book.do_or_do_not(:pages) || book.try(:page_count)
       %td= book.covers
-      %td= link_to 'Show', book
-      %td= link_to 'Edit', edit_book_path(book)
-      %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - if book.is_a? Mongoid::Document
+        %td= link_to 'Show', book
+        %td= link_to 'Edit', edit_book_path(book)
+        %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

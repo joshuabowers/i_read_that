@@ -1,5 +1,5 @@
-= form_tag books_path, method: :get do
+%form{ action: books_path, method: :get }
   .inputs
-    = text_field_tag :query, "", required: true, class: 'google-book-search'
+    = text_field_tag :q, params[:q], required: true, class: 'google-book-search'
   .actions
-    = submit_tag 'Search'
+    = submit_tag 'Search', name: nil

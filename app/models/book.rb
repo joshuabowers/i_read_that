@@ -12,7 +12,7 @@ class Book
   def self.google_books_search(query)
     GoogleBooks::API.search(query, api_key: google_books_api_key)
   end
-  
+    
   def self.create_from_google_books_search(query)
     google_books_search(query).map do |book|
       Book.find_or_create_by(
