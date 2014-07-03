@@ -1,0 +1,7 @@
+.cover{ data: { overlay: current_user.in_library?( book ) ? '-' : '+' } }
+  - if current_user.in_library?( book )
+    = link_to image_tag( cover_for( book ) ), Book.id_from( book ), method: :delete, remote: true, :data => { :confirm => 'Are you sure?' }
+  - else
+    = form_for Book.bookize( book ), remote: true do |f|
+      = f.hidden_field :isbn
+      = image_tag cover_for( book )

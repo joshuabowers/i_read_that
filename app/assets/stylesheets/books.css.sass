@@ -6,6 +6,7 @@
   +display(flex)
   +flex-wrap(wrap)
   +justify-content(center)
+  +align-items(baseline)
   
   .book
     padding: 1em
@@ -13,8 +14,11 @@
     border-radius: 0.5em
     transition: all 0.2s ease-in-out
     text-align: center
-    .cover img
-      box-shadow: 0 0 10px $shadow-color
+    .cover 
+      img
+        box-shadow: 0 0 10px $shadow-color
+      form
+        cursor: pointer
     .title, .authors
       white-space: nowrap
       overflow: hidden

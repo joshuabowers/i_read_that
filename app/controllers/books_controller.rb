@@ -43,7 +43,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(params[:book])
+    @book = params[:book].keys == ['isbn'] ? Book.find_or_build_by_isbn( params[:book][:isbn] ) : Book.new(params[:book])
 
     respond_to do |format|
       if @book.save
