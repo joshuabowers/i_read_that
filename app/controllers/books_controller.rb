@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     params[:q] ||= params[:query] || params[:search] || params[:s]
-    @books = params[:q].present? ? Book.google_books_search( params[:q] ) : Book.page( params[:page] ).per( 20 )
+    @books = params[:q].present? ? Book.google_books_search( params[:q] ).to_a : Book.page( params[:page] ).per( 20 )
 
     respond_to do |format|
       format.html # index.html.erb

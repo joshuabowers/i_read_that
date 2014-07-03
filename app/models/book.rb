@@ -5,6 +5,7 @@ class Book
   field :isbn, type: String
   field :pages, type: Integer
   field :covers, type: Hash
+  field :preview_link, type: String
   
   has_and_belongs_to_many :read_by, class_name: 'User', inverse_of: :read_books
   has_and_belongs_to_many :currently_read_by, class_name: 'User', inverse_of: :currently_reading
@@ -20,7 +21,8 @@ class Book
         authors: book.authors,
         isbn: book.isbn,
         pages: book.page_count,
-        covers: book.covers
+        covers: book.covers,
+        preview_link: book.preview_link
       )
     end
   end

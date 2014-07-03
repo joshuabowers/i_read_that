@@ -1,3 +1,33 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
+
+.books
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  
+  .book
+    padding: 1em
+    width: 160px
+    border-radius: 0.5em
+    transition: all 0.2s ease-in-out
+    text-align: center
+    .title, .authors
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+    .preview
+      margin-top: 0.2em
+      display: none
+    
+    &:hover
+      background-color: white
+      color: black
+      width: 200px
+      box-shadow: 3px 3px $shadow-color
+      .title, .authors
+        white-space: normal
+        overflow-y: auto
+      .preview
+        display: block

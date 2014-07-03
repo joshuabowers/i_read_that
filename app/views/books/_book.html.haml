@@ -1,0 +1,6 @@
+.book
+  = image_tag cover_for( book )
+  .title= book.title
+  .authors= link_to book.authors.to_sentence, books_path(q: book.authors.join(' '))
+  - if book.preview_link.present?
+    .preview= link_to image_tag('gbs_preview_button1.png'), book.preview_link, target: '_blank'
