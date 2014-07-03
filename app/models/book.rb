@@ -9,6 +9,7 @@ class Book
   
   has_and_belongs_to_many :read_by, class_name: 'User', inverse_of: :read_books
   has_and_belongs_to_many :currently_read_by, class_name: 'User', inverse_of: :currently_reading
+  has_and_belongs_to_many :in_library_of, class_name: 'User', inverse_of: :library
     
   def self.google_books_search(query)
     GoogleBooks::API.search(query, api_key: google_books_api_key)

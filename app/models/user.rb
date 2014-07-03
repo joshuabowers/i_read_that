@@ -43,4 +43,5 @@ class User
   embeds_many :events
   has_and_belongs_to_many :read_books, class_name: 'Book', inverse_of: :read_by
   has_and_belongs_to_many :currently_reading, class_name: 'Book', inverse_of: :currently_read_by
+  has_and_belongs_to_many :library, class_name: 'Book', inverse_of: :in_library_of
 end
